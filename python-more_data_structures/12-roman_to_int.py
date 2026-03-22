@@ -1,6 +1,11 @@
 #!/usr/bin/python3
+"""
+Roma rəqəmlərini tam ədədə (integer) çevirən modul
+"""
+
+
 def roman_to_int(roman_string):
-    """Roma rəqəmlərini tam ədədə (integer) çevirən funksiya."""
+    """Roma rəqəmlərini tam ədədə çevirir"""
     if not isinstance(roman_string, str) or roman_string is None:
         return 0
 
@@ -10,10 +15,7 @@ def roman_to_int(roman_string):
     }
     num = 0
     for i in range(len(roman_string)):
-        # Hazırkı simvolun dəyəri
         current_val = roman_dict.get(roman_string[i], 0)
-        
-        # Əgər növbəti simvolun dəyəri hazırkından böyükdürsə, çıxırıq
         if i + 1 < len(roman_string) and \
            roman_dict.get(roman_string[i + 1], 0) > current_val:
             num -= current_val
