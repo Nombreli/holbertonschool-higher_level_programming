@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a student class with filtered JSON output"""
+"""Student class with JSON filter"""
 
 
 class Student:
@@ -12,9 +12,16 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """Return filtered dictionary representation"""
+        """Return dictionary representation"""
 
-        if isinstance(attrs, list) and all(isinstance(i, str) for i in attrs):
-            return {key: getattr(self, key) for key in attrs if hasattr(self, key)}
+        if (
+            isinstance(attrs, list)
+            and all(isinstance(i, str) for i in attrs)
+        ):
+            return {
+                key: getattr(self, key)
+                for key in attrs
+                if hasattr(self, key)
+            }
 
         return self.__dict__
