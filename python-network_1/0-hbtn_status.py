@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Fetches a URL using urllib and displays response info
+"""Fetches a URL and displays response information using urllib"""
 
 from urllib import request
 
